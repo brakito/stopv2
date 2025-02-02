@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP V2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-screen">
+        <h1>STOP V2</h1>
+        <div id="rules">
+          <h2>¿Cómo jugar?</h2>
+          <p>El sistema mostrará <strong>4 categorías aleatorias</strong>. Para cada una, se indicará si debes <strong>hacer un dibujo</strong> o <strong>escribir una palabra</strong>.</p>
+          <p>Cada categoría tendrá una <strong>letra asignada</strong>. Tu dibujo o palabra debe comenzar con esa letra.</p>
+          <p>El juego termina cuando se acaba el tiempo o cuando alguien dice <strong>"Stop"</strong> (significa que completó todos los cuadros y los demás no pueden seguir dibujando o escribiendo).</p>
+          <h3>Puntaje:</h3>
+          <ul>
+            <li><strong>100 puntos</strong>: Si completas el cuadro muy bien.</li>
+            <li><strong>50 puntos</strong>: Si es dudoso o alguien más hizo lo mismo.</li>
+            <li><strong>200 puntos</strong>: Si fuiste el único en completar el cuadro.</li>
+            <li><strong>0 puntos</strong>: Si no completaste el cuadro o incumpliste las reglas.</li>
+          </ul>
+    </div>
+        <div class="buttons">
+            <button id="1-minute">1 Minuto</button>
+            <button id="2-minutes">2 Minutos</button>
+            <button id="3-minutes">3 Minutos</button>
+        </div>
+
+
+        <h2>Modo facíl</h2>
+        <p>La misma letra para todos los cuadros</p>
+        <div class="buttons">
+          <button id="1-minute-easy" class="easy-mode">1 Minuto Fácil</button>
+          <button id="2-minutes-easy" class="easy-mode">2 Minutos Fácil</button>
+          <button id="3-minutes-easy" class="easy-mode">3 Minutos Fácil</button>
+        </div>
+    </div>
+
+    <div id="game-screen" style="display: none;">
+        <div id="control">
+          <div id="timer">00:00</div>
+          <button id="end-game">Reiniciar</button>
+        </div>
+
+        <div id="quadrants">
+            <div class="quadrant" id="quadrant1"></div>
+            <div class="quadrant" id="quadrant2"></div>
+            <div class="quadrant" id="quadrant3"></div>
+            <div class="quadrant" id="quadrant4"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

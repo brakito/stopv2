@@ -1,0 +1,362 @@
+/* Estilos generales */
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pantalla principal */
+#main-screen {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    /* max-width: 800px; */
+    width: 100%;
+    margin: 20px;
+}
+
+#main-screen h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#main-screen p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.buttons button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex: 1 1 auto;
+    min-width: 150px;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Estilos para los botones de modo fácil */
+.buttons button.easy-mode {
+    background-color: #28a745; /* Verde para diferenciar */
+}
+
+.buttons button.easy-mode:hover {
+    background-color: #218838; /* Verde oscuro al pasar el mouse */
+}
+
+/* Pantalla de juego */
+#game-screen {
+
+    overflow: hidden;
+    display: none;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+}
+
+#control {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    z-index: 100;
+}
+
+/* Temporizador y botón de finalizar */
+#timer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#timer {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#end-game {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#end-game:hover {
+    background-color: #c82333;
+}
+
+/* Cuadrantes */
+#quadrants {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100vh;
+}
+
+.quadrant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+}
+
+.q_category {
+    font-size: 3.5rem;
+}
+
+.q_type {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    opacity: 90%;
+}
+
+.q_letter {
+    font-size: 25rem;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 20%;
+    line-height: 1;
+}
+
+/* Colores de los cuadrantes */
+#quadrant1 {
+    background-color: #ef476f; /* Rojo */
+}
+
+#quadrant2 {
+    background-color: #ffd166; /* Amarillo */
+}
+
+#quadrant3 {
+    background-color: #06d6a0; /* Verde */
+}
+
+#quadrant4 {
+    background-color: #118ab2; /* Azul */
+}
+
+/* Responsive design */
+@media (max-width: 845px) {
+    body {
+      font-size: 12px;
+    }
+
+    #main-screen {
+      margin-top: 300px;
+    }
+    
+    #main-screen h1 {
+        font-size: 2rem;
+    }
+
+    #main-screen p {
+        font-size: 1rem;
+    }
+
+    .buttons button {
+        font-size: 1rem;
+        padding: 12px 24px;
+        min-width: 120px;
+    }
+
+    #control {
+      flex-direction: row;
+    }
+
+    .quadrant {
+      gap: 8px;
+    }
+
+    #end-game {
+      margin: 0;
+    }
+
+    #timer {
+      font-size: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .q_category {
+        font-size: 2.25rem;
+    }
+
+    .q_type {
+        font-size: 1.5rem;
+    }
+
+    .q_letter {
+        font-size: 12rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-screen h1 {
+        font-size: 1.8rem;
+    }
+
+    #main-screen {
+      padding-top: 150px;
+    }
+    
+    #main-screen p {
+        font-size: 0.9rem;
+    }
+
+    .buttons button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        min-width: 100px;
+    }
+
+    .q_category {
+        font-size: 1.2rem;
+    }
+
+    .q_type {
+        font-size: 1rem;
+    }
+
+    .q_letter {
+        font-size: 10rem;
+    }
+}
+
+/*REGLAS*/
+/* Estilos para las reglas */
+#rules {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#rules h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#rules h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#rules p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#rules p strong {
+    color: #007bff;
+}
+
+#rules ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+#rules li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+#rules li strong {
+    color: #007bff;
+}
+
+/* Responsive design para las reglas */
+@media (max-width: 768px) {
+    #rules h2 {
+        font-size: 1.5rem;
+    }
+
+    #rules h3 {
+        font-size: 1.2rem;
+    }
+
+    #rules p, #rules li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #rules h2 {
+        font-size: 1.3rem;
+    }
+
+    #rules h3 {
+        font-size: 1.1rem;
+    }
+
+    #rules p, #rules li {
+        font-size: 0.9rem;
+    }
+}
